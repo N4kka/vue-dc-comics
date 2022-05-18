@@ -61,12 +61,12 @@ export default {
       align-items: center;
 
       img {
-        width: 20%;
+        width: 25%;
         margin: 0 20px;
       }
 
       h3 {
-        font-size: 9px;
+        font-size: 8px;
       }
     }
   }

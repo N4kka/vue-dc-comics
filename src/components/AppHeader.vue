@@ -57,8 +57,7 @@ export default {
 <style lang="scss">
 .header {
   width: 100%;
-  height: 100px;
-  margin-top: 2rem;
+  height: 150px;
   background-color: white;
 
   &__img {
@@ -69,6 +68,7 @@ export default {
 
   &__list {
     display: flex;
+    align-items: center;
     list-style: none;
     li {
       font-weight: 500;

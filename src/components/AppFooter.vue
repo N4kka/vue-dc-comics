@@ -180,6 +180,7 @@ footer {
 .footer-left {
   width: 50%;
   height: 100%;
+  padding-bottom: 15px;
   display: flex;
   flex-wrap: wrap;
 }

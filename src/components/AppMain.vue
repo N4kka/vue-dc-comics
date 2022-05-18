@@ -2,12 +2,20 @@
   <main>
     <div class="jumbotron"></div>
     <div class="series">
+      <div class="current-series">
+        <h3>current series</h3>
+      </div>
       <div class="container">
-        <div class="current-series">
-          <h3>current series</h3>
+        <div class="card-image" v-for="(item, index) in allCards" :key="index">
+          <div class="img-thumb">
+            <img :src="item.thumb" alt="" />
+          </div>
+          <p>
+            {{ item.series }}
+          </p>
         </div>
-        <div class="card-image" v-for="(item, index) in cards" :key="index">
-          <img :src="require(`../assets/img/${cards.thumb}`)" alt="" />
+        <div class="load-btn">
+          <button class="load-btn">load more</button>
         </div>
       </div>
     </div>
@@ -18,16 +26,12 @@
 export default {
   name: "AppMain",
   props: {
-    cards: Array,
+    allCards: Array,
   },
 };
 </script>
 
 <style>
-main {
-  height: 700px;
-}
-
 .jumbotron {
   height: 320px;
   background-image: url(../assets/img/jumbotron.jpg);
@@ -35,17 +39,13 @@ main {
 }
 
 .series {
-  height: 100%;
-  position: relative;
   background-color: #303030;
 }
 
 .current-series {
-  height: 50px;
-  padding: 5px 15px;
-  line-height: 40px;
-  position: absolute;
-  top: -30px;
+  width: 200px;
+  padding: 10px 25px;
+  margin: 0 auto;
   background-color: #0282f9;
 }
 
@@ -54,8 +54,39 @@ main {
   text-transform: uppercase;
 }
 
-.card-img {
+.card-image {
   width: calc(100% / 6);
-  height: 50px;
+}
+
+.card-image p {
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+.img-thumb {
+  margin: 1rem;
+}
+
+.img-thumb img {
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+}
+
+.load-btn {
+  margin: 1rem auto;
+}
+
+.load-btn button {
+  width: 180px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: 0px;
+  margin: 1rem;
+  color: white;
+  background-color: #0282f9;
+  font-weight: 700;
 }
 </style>
