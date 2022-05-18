@@ -1,18 +1,11 @@
 <template>
   <header class="header">
-    <div class="header__container">
+    <div class="container">
       <img class="header__img" src="../assets/img/dc-logo.png" alt="DC logo" />
       <ul class="header__list">
-        <li>Character</li>
-        <li id="selected">Comics</li>
-        <li>Movies</li>
-        <li>TV</li>
-        <li>Games</li>
-        <li>Collectibles</li>
-        <li>Videos</li>
-        <li>Fans</li>
-        <li>News</li>
-        <li>Shop</li>
+        <li v-for="(item, index) in menu" :key="index">
+          <h1>{{ item.text }}</h1>
+        </li>
       </ul>
     </div>
   </header>
@@ -21,6 +14,42 @@
 <script>
 export default {
   name: "AppHeader",
+  data: function () {
+    return {
+      menu: [
+        {
+          text: "Character",
+        },
+        {
+          text: "Comics",
+        },
+        {
+          text: "Movies",
+        },
+        {
+          text: "TV",
+        },
+        {
+          text: "Games",
+        },
+        {
+          text: "Collectibles",
+        },
+        {
+          text: "Videos",
+        },
+        {
+          text: "Fans",
+        },
+        {
+          text: "News",
+        },
+        {
+          text: "Shop",
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -31,15 +60,6 @@ export default {
   height: 100px;
   margin-top: 2rem;
   background-color: white;
-
-  &__container {
-    width: 60%;
-    height: 100%;
-    line-height: 100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-  }
 
   &__img {
     height: 75%;
@@ -53,6 +73,11 @@ export default {
     li {
       font-weight: 500;
       margin-right: 15px;
+
+      h1 {
+        font-size: 16px;
+        line-height: 100px;
+      }
     }
     #selected {
       color: #0282f9;
